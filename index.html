@@ -2,6 +2,7 @@
 <html>
     <head>
     <title>Obrazy</title>
+
     <style>
         body{
     background-color: rgb(153, 241, 241);
@@ -9,6 +10,10 @@
     background-attachment: fixed;
     background-size: cover; 
     font-family: 'Times New Roman';
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
         }
         h1{
         padding:60px;
@@ -23,15 +28,18 @@
         font-size: 24pt;
         margin: 0 auto;
         margin-bottom: 10px;
-        text-align: left;
+        text-align: center;
         font-family: 'Times New Roman';
     }
     img{
+     
         width: 640px;
-        margin:0 auto;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        margin-left: 165px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        align-items: center;
+        cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+        
     }
     </style>
     </head>
@@ -41,22 +49,32 @@
         <p>Nazywam się Patrycja Ogórek i malarstwo od niedawna jest moją pasją. Poniżej przedstawiam kilka swoich prac. Głównie maluję farbami akrylowymi. Jedna ostatnio postanowiłam spróbować innej techniki, akwareli, w której to jest namalowany ostatni obraz. </p>
         <hr>
         <p>"Wodospad"</p>
-        <img src="wodospady.jpg">
-        <p>"Niebiesko-żółta Ara"</p>
-        <img src="20210827_093545.jpg">
+        <img id="image1" src="wodospady.jpg" onclick="toggleImageSize('image1')">
+        <p> "Niebiesko-żółta Ara" </p>
+        <img id="image2" src="20210827_093545.jpg" onclick="toggleImageSize('image2')">
         <p>"Deszczowa Japonia"</p>
-        <img src="20210721_105247.jpg">
+        <img id="image3" src="20210721_105247.jpg" onclick="toggleImageSize('image3')">
         <p>"Góra Fuji"</p>
-        <img src="20210729_163044.jpg">
+        <img id="image4" src="20210729_163044.jpg" onclick="toggleImageSize('image4')">
         <p>"Magiczny Las"</p>
-        <img src="20210827_123324.jpg">
+        <img id="image5" src="20210827_123324.jpg" onclick="toggleImageSize('image5')">
         <p>"Ścierzka wśród drzew"</p>
-        <img src="20210827_123353.jpg">
+        <img id="image6" src="20210827_123353.jpg" onclick="toggleImageSize('image6')">
         <P>"Rajski ptak"</P>
-        <img src="20210827_094840.jpg">
+        <img id="image7" src="20210827_094840.jpg" onclick="toggleImageSize('image7')">
         <p>"Koliber"</p>
-        <img src="20210812_132522.jpg">
+        <img id="image8" src="20210812_132522.jpg" onclick="toggleImageSize('image8')">
         <p>"Zaczarowany ogród"</p>
-        <img src="20210715_083200.jpg">
+        <img id="image9" src="20210715_083200.jpg" onclick="toggleImageSize('image9')">
+        <script>
+            function toggleImageSize(imageId) {
+                var image = document.getElementById(imageId);
+                if (image.style.transform === "scale(1.5)") {
+                    image.style.transform = "scale(1)";
+                } else {
+                    image.style.transform = "scale(1.5)";
+                }
+            }
+        </script>
     </body>
 </html>
